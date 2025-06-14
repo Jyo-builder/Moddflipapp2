@@ -1,0 +1,87 @@
+:root {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.mood-card {
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: 2px solid transparent;
+}
+
+.mood-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.mood-card.selected {
+  border-color: #007bff;
+  background-color: #e3f2fd;
+}
+
+.flip-button {
+  transition: all 0.3s ease;
+  transform: scale(1);
+}
+
+.flip-button:hover:not(:disabled) {
+  transform: scale(1.05);
+}
+
+.flip-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.positive-response {
+  animation: fadeInUp 0.6s ease-out;
+  background: linear-gradient(135deg, #ffeaa7 0%, #fab1a0 100%);
+  border-left: 5px solid #fdcb6e;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.app-header {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+}
+
+.mood-grid {
+  max-height: 60vh;
+  overflow-y: auto;
+}
+
+.mood-grid::-webkit-scrollbar {
+  width: 8px;
+}
+
+.mood-grid::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.mood-grid::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+
+.mood-grid::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
